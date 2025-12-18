@@ -8,7 +8,6 @@ app.use(cors());
 // Routes
 
 const pool = require("./config/db.js");
-const { use } = require("react");
 
 app.get("/users", async (req, res) => {
     try {
