@@ -4,6 +4,8 @@ const app = express();
 app.use(express.json());
 // Routes
 
+const pool = require("./config/db.js")
+
 app.get("/users", async (req, res) => {
     try {
         const result = await pool.query("select * from users")
