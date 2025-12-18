@@ -1,6 +1,6 @@
 // Use express
 const express = require("express");
-import cors from "cors";
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
@@ -15,12 +15,14 @@ app.get("/users", async (req, res) => {
         res.status(200).json({ message: "Hello", data: result.rows });
     } catch (error) {
         console.log(`Error: ${error}`);
+        res.status(500).json({ message: "Server xatosi" });
     }
 })
 
 // APIs
 
 
-app.listen(3000, () => {
-    console.log("Server started on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
