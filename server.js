@@ -1,7 +1,10 @@
 // Use express
 const express = require("express");
+import cors from "cors";
+
 const app = express();
 app.use(express.json());
+app.use(cors());
 // Routes
 
 const pool = require("./config/db.js")
